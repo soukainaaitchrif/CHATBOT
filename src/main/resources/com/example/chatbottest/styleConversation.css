@@ -1,0 +1,92 @@
+/* src/main/resources/com/example/chatbottest/styles.css */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: #403f3f;
+    -fx-text-fill: #ffffff;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.text-field {
+    -fx-padding: 10px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-pref-width: 300px; /* Default width */
+    -fx-min-width: 150px; /* Minimum width */
+    -fx-max-width: Infinity; /* Allow the text field to grow dynamically */
+}
+
+.inputBox {
+    -fx-padding: 10px;
+    -fx-spacing: 15px; /* Space between the buttons and the text field */
+    -fx-alignment: center; /* Center-align all elements */
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-width: 100%; /* Ensure it spans the full page width */
+}
+
+.button {
+    -fx-background-color: #28a745; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-padding: 10px 20px; /* Padding for buttons */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #218838; /* Slightly darker green on hover */
+}
+
+/*.messageContainer{*/
+/*    -fx-background-color: #f9f9f9;*/
+/*    -fx-border-color: #ccc;*/
+/*    -fx-border-radius: 5px;*/
+/*    -fx-padding: 5px;*/
+/*}*/
+
+.user-message {
+    -fx-background-color: #d1e7dd;
+    -fx-text-fill: #0f5132;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-margin: 10px; /* Ensure proper spacing */
+    -fx-alignment: center-right; /* Align text to the right */
+    -fx-wrap-text: true; /* Allow text to wrap within the bounds */
+    -fx-max-width: 300px; /* Limit the maximum width */
+}
+
+.bot-message {
+    -fx-background-color: #f8d7da;
+    -fx-text-fill: #842029;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-margin: 10px; /* Ensure proper spacing */
+    -fx-alignment: center-left; /* Align text to the left */
+    -fx-wrap-text: true; /* Allow text to wrap within the bounds */
+    -fx-max-width: 300px; /* Limit the maximum width */
+}
+
+.MessagesBox {
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-alignment: top-center; /* Align messages to the top center */
+    -fx-content-display: flex;
+    -fx-flex-direction: column;
+    -fx-justify-content: flex-start; /* Align items to the start */
+}
+/*.diplayMessages {*/
+/*    -fx-fit-to-width: 100%;*/
+/*    -fx-fit-to-height: 100%;*/
+/*    -fx-alignment: center;*/
+/*}*/

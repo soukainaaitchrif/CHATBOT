@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Service with pgvector
+  postgres:
+    image: pgvector/pgvector:pg17 # Use the latest tag for clarity
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: rag-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "root" ]  # Use the correct user (root)
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - my-network
+
+  # Adminer Service (for PostgreSQL management)
+  adminer:
+    image: adminer:latest
+    container_name: adminer-container
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+    depends_on:
+      postgres:
+        condition: service_healthy  # Wait for PostgreSQL to be healthy
+
+  # pgAdmin Service (for PostgreSQL management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin-container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - my-network
+    depends_on:
+      postgres:
+        condition: service_healthy  # Wait for PostgreSQL to be healthy
+
+volumes:
+  pg_data:
+
+networks:
+  my-network:
+    driver: bridge
